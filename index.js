@@ -2,6 +2,10 @@ const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
+const util = require('util');
+
+
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // array of questions for user
 const questions = [
@@ -28,7 +32,6 @@ const questions = [
         name: "usage",
         message: "Please provide examples of how your project's usage and explain how to use it.",
       },
-    
       {
         type: "list",
         name: "license",
@@ -43,12 +46,9 @@ const questions = [
           {
             name: "Apache License 2.0",
           },
-          {
-            name: "The Unilicense",
-          },
+    
         ],
       },
-    
       {
         type: "input",
         name: "contributing",
@@ -58,7 +58,7 @@ const questions = [
       {
         type: "input",
         name: "testing",
-        message: "Are there any test instructions for this project?",
+        message: "Are there any test instructions for this project? Please provide an explanation of any tests",
       },
     
       {
@@ -74,24 +74,11 @@ const questions = [
       },
 ];
 
-// function to ask user questions 
 const prompt = () => {
     return inquirer.prompt(questions);
-  }
-  
-// function to write README file
-const writeToFile = (fileName, data) => {
-    fs.writeFile(fileName), 
-    data , 
-    (err) => err ? console.error(err) : console.log('ReadMe generated!')
 }
 
-// function to initialize program
-const init = () => {
 prompt()
-.then(writeToFile(README.md, generateMarkdown(data)))
-
-}
-
-// function call to initialize program
-init();
+  .then((data) => writeFileAsync('README.md', generateMarkdown(data)))
+  .then(() => console.log('Successfully generated Readme!'))
+  .catch((err) => console.error(err));
