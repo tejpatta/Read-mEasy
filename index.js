@@ -74,12 +74,22 @@ const questions = [
       },
 ];
 
+// function to ask user questions 
+const prompt = () => {
+    return inquirer.prompt(questions);
+  }
+  
 // function to write README file
 const writeToFile = (fileName, data) => {
+    fs.writeFile(fileName), 
+    data , 
+    (err) => err ? console.error(err) : console.log('ReadMe generated!')
 }
 
 // function to initialize program
 const init = () => {
+prompt()
+.then(writeToFile(README.md, generateMarkdown(data)))
 
 }
 
