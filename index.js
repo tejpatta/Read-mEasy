@@ -30,7 +30,7 @@ const questions = [
       {
         type: "input",
         name: "usage",
-        message: "Please provide examples of how your project's usage and explain how to use it.",
+        message: "Please provide examples of your project's usage and explain how to use it.",
       },
       {
         type: "list",
