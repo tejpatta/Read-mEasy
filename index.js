@@ -46,6 +46,11 @@ const questions = [
           {
             name: "Apache License 2.0",
           },
+
+          {
+            name: "BSD 3-Clause License",
+          },
+    
     
         ],
       },

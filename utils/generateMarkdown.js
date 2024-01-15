@@ -10,7 +10,11 @@ switch (data) {
 
   case  "Apache License 2.0":
     return licensebadge = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
-  default:
+  
+  case "BSD 3-Clause License":
+    return licensebadge = "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"
+  
+    default:
     return licensebadge = ""
     
 }};
@@ -20,16 +24,19 @@ const generateMarkdown = (data) => {
   return `# ${data.title} 
 
 
-  ## Description
-
-  ${data.description}
+  ## About
   ${licensebadge}
+  
+  ${data.description}
 
   ## Table of Contents
   
   * [Installation](#installation)
   * [Usage](#usage)
   * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
   
   
   ## Installation
@@ -51,8 +58,9 @@ const generateMarkdown = (data) => {
   ${data.testing}
 
   ## Questions
-  My GitHub profile:   ${data.github}
-  For any further questions, you can reach my via email at   ${data.questions}
+  My GitHub profile: ${data.github}
+  
+  For any further questions, you can reach me via email at   ${data.questions}
 
 `;
 }
