@@ -84,6 +84,6 @@ const prompt = () => {
 }
 
 prompt()
-  .then((data) => writeFileAsync('EasyREADME.md', generateMarkdown(data)))
+  .then((data) => writeFileAsync(`${data.title}'EasyREADME.md`, generateMarkdown(data)))
   .then(() => console.log('Successfully generated Readme!'))
   .catch((err) => console.error(err));
