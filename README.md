@@ -1,6 +1,9 @@
 ## Description
 
 Video Demonstration: https://app.screencastify.com/v3/watch/dcvGIAMAlmPohaHAJLfC
+
+The video demonstration above generates a ReadMe for a future project, not a real one.
+
 This command-line tool was created in response to a boot camp assignment to apply skills learnt in JavaScript- particularly Node.js as well as the use of ES6 Syntax. 
 
 ## Installation
