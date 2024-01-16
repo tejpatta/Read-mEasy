@@ -1,12 +1,13 @@
 ## Description
 
-This command-line tool was created in response to boot camp assignment to apply skills learnt in JavaScript- particularly Node.js as well as the use of ES6 Syntax. The 
+Video Demonstration: https://app.screencastify.com/v3/watch/dcvGIAMAlmPohaHAJLfC
+This command-line tool was created in response to a boot camp assignment to apply skills learnt in JavaScript- particularly Node.js as well as the use of ES6 Syntax. 
 
 ## Installation
 
-This is a command line appliaction which will be run on your machine. 
+This is a command line application which will be run on your machine. 
 
-Copy this reposity onto you local machine.
+Copy this repository onto your local machine.
 
 Install required node modules by running `npm install`.
 
